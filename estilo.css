@@ -11,6 +11,8 @@ header{
 	flex-direction: row;
 	width: 100%;
 	height: 80px;
+	background-color: #fff;
+	position: fixed;
 }
 header img{
 	width: 8%;
@@ -89,4 +91,143 @@ header img{
 	width: 40%;
 	transition-property: all;
 	transition-duration: 1s;
+}
+#inicio{
+	width: 100%;
+}
+.img-f{
+	width: 75%;
+}
+.n11{
+	display: flex;
+	flex-direction: column;
+}
+.n11 h1{
+	margin: 150px 0px 50px 10%;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 90px;
+	color: #232f3e;
+}
+.n11 a{
+	width: 30%;
+	font-family: AEmb , Helvetica, Arial, sans-serif;
+	font-size: 25px;
+	text-decoration: none;
+	background-color: #f90;
+    color: #232f3e;
+    border-radius: 50px;
+    margin: 0px 0% 20px 10%;
+    padding: 15px 30px;
+}
+.n11 span{
+	width: 35%;
+	margin-left: 10%;
+	font-family: AEmb , Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: #232f3e;
+	margin-bottom: 80px;
+}
+.n22{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+    background-color: #EBF8FA;
+	padding: 100px 0px;
+}
+.p-3{
+	background-color: #fff;
+	border-radius: 10px;
+	height: 410px;
+}
+.card-img-top{
+	width: 22%;
+	margin-left: 10%;
+	padding: 20px 0px 0px 0px;
+}
+.card{
+	border: 0px;
+}
+.card-body{
+	background-color: #fff;
+}
+.card-title{
+	color: #232f3e;
+	padding-bottom: 10px
+}
+.card-text{
+	color: #232f3e;
+	padding-bottom: 25px;
+	height: 150px;
+	line-height: 23px;
+	margin-bottom: 5px;
+}
+.card-link{
+	text-decoration: none;
+	color: #000;
+}
+.n33{
+	background-color: #232F3E;
+	color: #fff;
+	padding-top: 60px;
+	padding-bottom: 30px;
+}
+.hde{
+	width: 94%;
+	margin-left: 6%;
+}
+.nset{
+}
+.txal{
+	text-align: center;
+}
+.dcl{
+	margin-top: 30px;
+	border-bottom: 1px solid #a9a9a9;
+}
+.conts{
+	padding: 50px 0px;
+}
+.slcont{
+	width: 88%;
+	margin: 0px 6%;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #a9a9a9;
+}
+.btn-link{
+	width: 100%
+}
+.btn-link img{
+	width: 100%;
+	border-radius: 10px;
+}
+.txsli{
+	margin: 0px;
+}
+.slcont-o{
+	width: 50%;
+}
+.s1{
+	width: 90%;
+	margin-top: 70px;
+}
+.carousel-control-prev{
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	border-radius: 100%;
+	border: 1px solid #fff;
+}
+.carousel-control-next{
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	border-radius: 100%;
+	border: 1px solid #fff;
+}
+.modal{
+	color: #000;
+	background-color: transparent;
+}
+.ifsl{
+	width: 100%;
 }
