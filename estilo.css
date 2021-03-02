@@ -8,7 +8,6 @@ body{
 }
 #header{
 	width: 100%;
-	display: flex;
 }
 #checkbtn{
 	display: none;
@@ -18,7 +17,6 @@ body{
 }
 .contentheader{
 	width: 100%;
-	display: flex;
 }
 header{
 	display: flex;
@@ -618,7 +616,7 @@ form span{
 		flex-wrap: wrap;
 		width: 100%;
 		height: auto;
-		position: none;
+		position: absolute;
 		z-index: 100;
 		padding-bottom: 30px;
 		margin-top: 10px;
