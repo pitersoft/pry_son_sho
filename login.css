@@ -1,0 +1,105 @@
+*{
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+body{
+	width: 100%;
+}
+.logo{
+	width: 20%;
+	margin: 0px 40%;
+	opacity: 0.5;
+}
+form{
+	width: 35%;
+	margin: 0px auto;
+	background-color: #fff;
+	border: 1px solid #add8e6;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.h2{
+	width: 90%;
+	margin-left: 5%;
+	padding: 30px 0px;
+}
+.lblcorreo{
+	width: 90%;
+	margin-left: 5%;
+	font-size: 10pt;
+}
+#correo{
+	width: 80%;
+	margin-left: 5%;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #add8e6;
+	padding: 10px;
+	margin-right: 10%;
+}
+.lblpassword{
+	width: 40%;
+	margin-left: 5%;
+	font-size: 10pt;
+}
+.olvidar{
+	width: 50%;
+}
+.olvidar a{
+	width: 100%;
+	font-size: 8pt;
+}
+#password{
+	width: 80%;
+	margin-left: 5%;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 1px solid #add8e6;
+	padding: 10px;
+	margin-right: 10%;
+}
+
+.btn-submit{
+	width: 30%;
+}
+.div{
+	width: 35%;
+}
+#ms{
+	width: 5%;
+	margin-top: 20px;
+	margin-left: 5%;
+}
+.ventanams{
+	width: 300px;
+	display: none;
+	clip-path: polygon(0% 0%, 100% 0%, 100% 92%, 56% 92%, 49% 100%, 41% 92%, 0 92%);
+	position: absolute;
+	margin-top: -190px;
+	background-color: #EBF8FA;
+	padding: 10px 10px 20px 10px;
+	border-radius: 20px;
+}
+#lblms{
+	width: 60%;
+	margin-top: 15px;
+	margin-right: 20%;
+}
+.disable{
+	width: 100%;
+	padding: 10px 0px;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.5);
+}
+.crear{
+	width: 50%;
+	border-radius: 20px;
+	margin-bottom: 30px;
+}
+#lblms:hover > .ventanams{
+		display: flex;
+}

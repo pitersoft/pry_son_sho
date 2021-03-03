@@ -193,65 +193,54 @@ header img{
 	color: #fff;
 	padding-top: 60px;
 	padding-bottom: 30px;
+	display: flex;
+	flex-direction: column;
 }
 .hde{
-	width: 94%;
-	margin-left: 6%;
+	width: 90%;
+	margin-left: 10%;
+	padding-bottom: 30px;
 }
-.nset{
-}
-.txal{
-	text-align: center;
-}
-.dcl{
-	margin-top: 30px;
-	border-bottom: 1px solid #a9a9a9;
-}
-.conts{
-	padding: 50px 0px;
-}
-.slcont{
-	width: 88%;
-	margin: 0px 6%;
-	padding-bottom: 50px;
-	border-bottom: 1px solid #a9a9a9;
-}
-.btn-link{
-	width: 100%
-}
-.btn-link img{
-	width: 100%;
-	border-radius: 10px;
-}
-.txsli{
-	margin: 0px;
-}
-.slcont-o{
-	width: 50%;
+#carouselExampleCaptions{
 }
 .s1{
-	width: 90%;
-	margin-top: 70px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
-.carousel-control-prev{
-	width: 30px;
-	height: 30px;
-	padding: 5px;
-	border-radius: 100%;
-	border: 1px solid #fff;
+.s11{
+	width: 50%;
+	text-align: center;
 }
-.carousel-control-next{
-	width: 30px;
-	height: 30px;
-	padding: 5px;
-	border-radius: 100%;
-	border: 1px solid #fff;
+.s12{
+	width: 5%;
+	text-align: center;
+	margin: 10px 5% 10px 23%;
+	border-radius: 10px;
+	padding: 10px 0px;
+	border: 1px solid#fff;
 }
-.modal{
-	color: #000;
-	background-color: transparent;
+.s2{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 30px;
 }
-.ifsl{
+.s21{
+	width: 30%;
+	margin-right: 5%;
+}
+.s21 p{
+	width: 100%;
+	line-height: 35px;
+	padding: 50px 0px;
+}
+.s22{
+	width: 40%;
+}
+.s22 img{
 	width: 100%;
 }
 .register{
@@ -528,7 +517,7 @@ form span{
 	margin-top: 90px;
 }
 #privace p{
-	width: 100%;
+	width: 50%;
 	border-radius: 5px;
 	clip-path: polygon(0% 0%, 100% 0%, 100% 92%, 56% 92%, 49% 100%, 41% 92%, 0 92%);
 	padding: 15px 15px 30px 15px;
@@ -536,6 +525,11 @@ form span{
 	color: #fff;
 	font-family: AEmb , Helvetica, Arial, sans-serif;
 	display: none;
+	position: absolute;
+	margin-top: -370px;
+}
+#privace:hover > p{
+		display: flex;
 }
 #privace a{
 	width: 100%;
@@ -742,15 +736,10 @@ form span{
 		margin: 80px 0px 30px 0%;
 		font-family: 'PT Sans', sans-serif;
 		font-size: 50px;
-		color: #232f3e;
 	}
 	.n11 a{
 		width: 200px;
-		font-family: AEmb , Helvetica, Arial, sans-serif;
 		font-size: 22px;
-		text-decoration: none;
-		background-color: #0098D8;
-		color: #fff;
 		text-align: center;
 	    border-radius: 50px;
 	    margin: 0px auto 20px auto;
@@ -758,9 +747,7 @@ form span{
 	}
 	.n11 span{
 		width: 100%;
-		font-family: AEmb , Helvetica, Arial, sans-serif;
 		font-size: 14px;
-		color: #232f3e;
 		margin-bottom: 30px;
 		text-align: center;
 		margin-left: 0%;
@@ -779,61 +766,62 @@ form span{
 		margin-bottom: 30px;
 	}
 	.n33{
-		width: 100%;
-		padding-top: 30px;
-		padding-bottom: 10px;
+		padding-top: 60px;
+		padding-bottom: 30px;
+		display: flex;
+		flex-direction: column;
 	}
-	.conts{
-		padding: 20px 0px;
+	.hde{
+		width: 90%;
+		margin-left: 10%;
+		padding-bottom: 30px;
 	}
-	.slcont{
-		width: 88%;
-		margin: 0px 6%;
-		padding-bottom: 50px;
-		border-bottom: 1px solid #a9a9a9;
-	}
-	.btn-link{
-		width: 100%
-	}
-	.btn-link img{
-		width: 100%;
-		border-radius: 10px;
-	}
-	.txsli{
-		width: 100%;
-		margin: 0px;
-	}
-	.slcont-o{
-		width: 100%;
+	#carouselExampleCaptions{
 	}
 	.s1{
-		width: 90%;
-		margin-top: 12px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
-	.carousel-control-prev{
-		width: 30px;
-		height: 30px;
-		padding: 5px;
-		border-radius: 100%;
-		border: 1px solid #fff;
+	.s11{
+		width: 65%;
+		text-align: center;
 	}
-	.carousel-control-next{
-		width: 30px;
-		height: 30px;
-		padding: 5px;
-		border-radius: 100%;
-		border: 1px solid #fff;
+	.s12{
+		width: 20%;
+		text-align: center;
+		margin: 10px 5% 10px 8%;
+		border-radius: 10px;
+		padding: 10px 0px;
+		border: 1px solid#fff;
+		height: 50px;
 	}
-	.modal{
-		color: #000;
-		background-color: transparent;
+	.s2{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 30px;
 	}
-	.ifsl{
+	.s21{
+		width: 70%;
+		margin-left: 15%;
+	}
+	.s21 p{
+		width: 100%;
+		line-height: 35px;
+		padding: 10px 0px;
+	}
+	.s22{
+		width: 80%;
+		margin-left: 10%;
+	}
+	.s22 img{
 		width: 100%;
 	}
 	.register{
 		width: 100%;
-	    background-color: #EBF8FA;
 		display: flex;
 		flex-direction: column;
 		height: 200px;
@@ -1366,56 +1354,56 @@ form span{
 		margin-bottom: 30px;
 	}
 	.n33{
-		width: 100%;
-		padding-top: 30px;
-		padding-bottom: 10px;
+		padding-top: 60px;
+		padding-bottom: 30px;
+		display: flex;
+		flex-direction: column;
 	}
-	.conts{
-		padding: 20px 0px;
+	.hde{
+		width: 90%;
+		margin-left: 10%;
+		padding-bottom: 30px;
 	}
-	.slcont{
-		width: 88%;
-		margin: 0px 6%;
-		padding-bottom: 50px;
-		border-bottom: 1px solid #a9a9a9;
-	}
-	.btn-link{
-		width: 100%
-	}
-	.btn-link img{
-		width: 100%;
-		border-radius: 10px;
-	}
-	.txsli{
-		width: 100%;
-		margin: 0px;
-	}
-	.slcont-o{
-		width: 100%;
+	#carouselExampleCaptions{
 	}
 	.s1{
-		width: 90%;
-		margin-top: 12px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
-	.carousel-control-prev{
-		width: 30px;
-		height: 30px;
-		padding: 5px;
-		border-radius: 100%;
-		border: 1px solid #fff;
+	.s11{
+		width: 70%;
+		text-align: center;
 	}
-	.carousel-control-next{
-		width: 30px;
-		height: 30px;
-		padding: 5px;
-		border-radius: 100%;
-		border: 1px solid #fff;
+	.s12{
+		width: 10%;
+		text-align: center;
+		margin: 10px 5% 10px 0%;
+		border-radius: 10px;
+		padding: 10px 0px;
+		border: 1px solid#fff;
 	}
-	.modal{
-		color: #000;
-		background-color: transparent;
+	.s2{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 30px;
 	}
-	.ifsl{
+	.s21{
+		width: 40%;
+		margin-right: 5%;
+	}
+	.s21 p{
+		width: 100%;
+		line-height: 35px;
+		padding: 0px 0px;
+	}
+	.s22{
+		width: 40%;
+	}
+	.s22 img{
 		width: 100%;
 	}
 	.register{
