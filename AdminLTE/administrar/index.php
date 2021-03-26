@@ -1,10 +1,5 @@
-
 <!doctype html>
 <html lang="en">
-<?php  
-  // if (!$_GET) {
-  // header('Location:http://localhost/AdminLTE');
-?>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -37,17 +32,17 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   <!--===============================================================================================-->
-    <title>Login</title>
+    <title>Login Administrador</title>
   </head>
   <body>
     <div class="container-login100" style="background-image: url('images/bg-01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-      <form id="registrar" action="loguear.php" method="POST" class="login100-form validate-form">
+      <form id="registrar" action="adminloguear.php" method="POST" class="login100-form validate-form">
         <div class="flex-c p-b-5">
           <img src="images/icons/favicon.ico" alt="">
         </div>
         <span class="login100-form-title p-b-37">
-          Iniciar Sesión
+          Administrador
         </span>
 
         <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electrónico">
@@ -67,8 +62,8 @@
         </div>
       </form>
        <div class="text-center">
-          <a href="registrarse.php" class="txt2 hov1">
-            Registrarse
+          <a href="../index.php" class="txt2 hov1">
+            Volver a Login
           </a>
         </div>
       

@@ -1,10 +1,5 @@
-
 <!doctype html>
 <html lang="en">
-<?php  
-  // if (!$_GET) {
-  // header('Location:http://localhost/AdminLTE');
-?>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -37,38 +32,42 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   <!--===============================================================================================-->
-    <title>Login</title>
+    <title>Datos Incorrectos</title>
   </head>
   <body>
     <div class="container-login100" style="background-image: url('images/bg-01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-      <form id="registrar" action="loguear.php" method="POST" class="login100-form validate-form">
-        <div class="flex-c p-b-5">
+      <form class="login100-form validate-form">
+      	<div class="flex-c p-b-5">
           <img src="images/icons/favicon.ico" alt="">
         </div>
-        <span class="login100-form-title p-b-37">
-          Iniciar Sesión
-        </span>
+      	<br>
+        <div class="alert alert-danger" align="center">
+        	<?php  
+			require '../conexion.php';
+			session_start();
 
-        <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electrónico">
-          <input class="input100" type="text" name="usuario" placeholder="Correo Electrónico">
-          <span class="focus-input100"></span>
-        </div>
+			$usuarioad = $_POST['usuario'];
+			$clavead = $_POST['contrasena'];
 
-        <div class="wrap-input100 validate-input m-b-25" data-validate = "Ingrese Contraseña">
-          <input class="input100" type="password" name="contrasena" placeholder="Contraseña">
-          <span class="focus-input100"></span>
-        </div>
+			$q = "SELECT COUNT(*) FROM usuario where email = '$usuarioad' and password = '$clavead' and login = 1";
+			$consulta = mysqli_query($conexion,$q);
+			$array = mysqli_fetch_array($consulta);
 
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
-            Iniciar Sesión
-          </button>
-        </div>
+			if($array['contar'>0]){
+				$_SESSION['username'] = $usuario;
+				header("location: ../dashboard");
+			}else{
+				echo "Usted no es Administrador";
+			}
+
+			?>
+			</div>
       </form>
+      <br>
        <div class="text-center">
-          <a href="registrarse.php" class="txt2 hov1">
-            Registrarse
+          <a href="../index.php" class="txt2 hov1">
+            Volver
           </a>
         </div>
       

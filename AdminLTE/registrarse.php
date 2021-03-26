@@ -93,7 +93,7 @@
                                     VALUES('$nombrec','$username','$correo','$contraseña')";
                 
                 if ($conexion->query($sqlregistrar) === true) {
-                  echo '<div class="alert alert-success" role="alert">¡Te Registraste Correctamente!</div>';
+                  echo '<br><div class="alert alert-success" role="alert">¡Te Registraste Correctamente!</div><br>';
                 }else{
                   die('<div class="alert alert-danger">"Error al insertar datos."</div>');
                 }                
