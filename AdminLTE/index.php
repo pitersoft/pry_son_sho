@@ -1,112 +1,126 @@
-
-<!doctype html>
-<html lang="en">
 <?php  
-  // if (!$_GET) {
-  // header('Location:http://localhost/AdminLTE');
+
+session_start();
+$usuario = $_SESSION['username'];
+
+if(!isset($usuario)){
+	header("location: login.php");
+}
 ?>
+<html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style type="text/css" media="screen">
+      *{
+        font-family: SourceSansPro-Regular;
+      }
+    </style>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="shortcut icon" href="images/icons/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--===============================================================================================-->  
-   <!--  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
-  <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-  <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-  <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-  <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-  <!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-  <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-  <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-  <!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-  <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-  <!--===============================================================================================-->
-    <title>Login</title>
+    <title>Home</title>
   </head>
   <body>
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
-    <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-      <form id="registrar" action="loguear.php" method="POST" class="login100-form validate-form">
-        <div class="flex-c p-b-5">
-          <img src="images/icons/favicon.ico" alt="">
-        </div>
-        <span class="login100-form-title p-b-37">
-          Iniciar Sesión
-        </span>
-
-        <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electrónico">
-          <input class="input100" type="text" name="usuario" placeholder="Correo Electrónico">
-          <span class="focus-input100"></span>
-        </div>
-
-        <div class="wrap-input100 validate-input m-b-25" data-validate = "Ingrese Contraseña">
-          <input class="input100" type="password" name="contrasena" placeholder="Contraseña">
-          <span class="focus-input100"></span>
-        </div>
-
-        <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
-            Iniciar Sesión
-          </button>
-        </div>
-      </form>
-       <div class="text-center">
-          <a href="registrarse.php" class="txt2 hov1">
-            Registrarse
+  	<div class="container-login100" style="z-index: 100; top: 0;width: 100%;height: 100%;">
+      <nav style="position: fixed;z-index: 100; width: 100%;" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand me-4" href="#">
+            <img src="img/favicon.ico" alt="" style="border-radius: 100%;" width="70" height="70">
           </a>
+          <!-- <a class="navbar-brand" href="#">Bienvenido <?php echo strtoupper($usuario); ?></a> -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mr-5 mb-2 mb-lg-0">
+              <li class="nav-item m-auto">
+                <a class="nav-link disabled h1" href="#" tabindex="" aria-disabled="true">Bienvenido <!-- <?php echo strtoupper($usuario); ?> --></a>
+              </li>
+              <li class="nav-item m-auto">
+                <a style="user-select: none;color: transparent;" class="nav-link disabled" href="#" tabindex="" aria-disabled="true">HOLA</a>
+              </li>
+              <li class="nav-item m-auto">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item m-auto">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown m-auto">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li> -->
+            </ul>
+            <form class="m-auto d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <a class="btn btn-danger mt-3 m-auto me-4" href='salir.php'>Salir</a>
+          </div>
         </div>
-      
-    </div>
-  </div>
-  
-  
-
-  <div id="dropDownSelect1"></div>
-  
-<!--===============================================================================================-->
-  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-  <script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-  <script src="vendor/bootstrap/js/popper.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-  <script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-  <script src="vendor/daterangepicker/moment.min.js"></script>
-  <script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-  <script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-  <script src="js/main.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-
+      </nav>
+		  <!-- <nav class="navbar navbar-light bg-light" style="background-color: rgba(255,255,255,1);">
+        <div class="container-fluid" col-11>
+           <a class="navbar-brand" href="#">
+             <img src="images/logo.ico" alt="" style="border-radius: 100%;" width="70" height="70">
+           </a>
+          <div class=" h1 col-7">Bienvenido <?php echo strtoupper($usuario); ?></div>
+            <form class="d-flex col-3 mt-3">
+              <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <a class="btn btn-danger col-1" href='salir.php'>Salir</a>
+          </div>
+      </nav> -->
+      <div class="h1" style="padding-top: 120px; width: 100%; text-align: center;"><?php echo strtoupper($usuario); ?></div>
+      <div style="width: 100%; height: 630px;background-image: url(images/fondo2.PNG);background-repeat: no-repeat;background-size: cover;background-position: center;">
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus labore eius cupiditate voluptates neque molestiae, necessitatibus magnam temporibus est pariatur alias totam laborum cumque impedit quidem dolore unde facilis reprehenderit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusamus debitis quos quas illum quis ea hic deleniti sequi corrupti placeat quod aspernatur et, aliquam nesciunt. Voluptas dolorum, debitis est!
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus labore eius cupiditate voluptates neque molestiae, necessitatibus magnam temporibus est pariatur alias totam laborum cumque impedit quidem dolore unde facilis reprehenderit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusamus debitis quos quas illum quis ea hic deleniti sequi corrupti placeat quod aspernatur et, aliquam nesciunt. Voluptas dolorum, debitis est!
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus labore eius cupiditate voluptates neque molestiae, necessitatibus magnam temporibus est pariatur alias totam laborum cumque impedit quidem dolore unde facilis reprehenderit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusamus debitis quos quas illum quis ea hic deleniti sequi corrupti placeat quod aspernatur et, aliquam nesciunt. Voluptas dolorum, debitis est!
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus labore eius cupiditate voluptates neque molestiae, necessitatibus magnam temporibus est pariatur alias totam laborum cumque impedit quidem dolore unde facilis reprehenderit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusamus debitis quos quas illum quis ea hic deleniti sequi corrupti placeat quod aspernatur et, aliquam nesciunt. Voluptas dolorum, debitis est!
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus labore eius cupiditate voluptates neque molestiae, necessitatibus magnam temporibus est pariatur alias totam laborum cumque impedit quidem dolore unde facilis reprehenderit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusamus debitis quos quas illum quis ea hic deleniti sequi corrupti placeat quod aspernatur et, aliquam nesciunt. Voluptas dolorum, debitis est!
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus labore eius cupiditate voluptates neque molestiae, necessitatibus magnam temporibus est pariatur alias totam laborum cumque impedit quidem dolore unde facilis reprehenderit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusamus debitis quos quas illum quis ea hic deleniti sequi corrupti placeat quod aspernatur et, aliquam nesciunt. Voluptas dolorum, debitis est!
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus labore eius cupiditate voluptates neque molestiae, necessitatibus magnam temporibus est pariatur alias totam laborum cumque impedit quidem dolore unde facilis reprehenderit.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi accusamus debitis quos quas illum quis ea hic deleniti sequi corrupti placeat quod aspernatur et, aliquam nesciunt. Voluptas dolorum, debitis est!
+        Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Porro, voluptates quasi iste fugit consequatur vitae inventore magni esse ipsum ratione sapiente sint fugiat laboriosam dolorum, cumque asperiores aperiam laudantium accusamus.
+      </div>
+      <iframe style="width: 100%;height: 201px; border-style: none" src="vistas/footer.php"></iframe>
+  	</div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     -->
   </body>
 </html>

@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/icons/favicon.ico" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--===============================================================================================-->  
    <!--  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
   <!--===============================================================================================-->
@@ -35,23 +35,23 @@
     <title>Login Administrador</title>
   </head>
   <body>
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div class="container-login100" style="background-image: url('img/fondo.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
       <form id="registrar" action="adminloguear.php" method="POST" class="login100-form validate-form">
         <div class="flex-c p-b-5">
-          <img src="images/icons/favicon.ico" alt="">
+          <img src="img/favicon.ico" alt="">
         </div>
         <span class="login100-form-title p-b-37">
           Administrador
         </span>
 
         <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electrónico">
-          <input class="input100" type="text" name="usuario" placeholder="Correo Electrónico">
+          <input class="input100" type="text" name="usuarioad" placeholder="Correo Electrónico">
           <span class="focus-input100"></span>
         </div>
 
         <div class="wrap-input100 validate-input m-b-25" data-validate = "Ingrese Contraseña">
-          <input class="input100" type="password" name="contrasena" placeholder="Contraseña">
+          <input class="input100" type="password" name="contrasenaad" placeholder="Contraseña">
           <span class="focus-input100"></span>
         </div>
 

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,42 +32,38 @@
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   <!--===============================================================================================-->
-    <title>Datos Incorrectos</title>
+    <title>Login</title>
   </head>
   <body>
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div class="container-login100" style="background-image: url('img/fondo.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-      <form class="login100-form validate-form">
-      	<div class="flex-c p-b-5">
-          <img src="images/icons/favicon.ico" alt="">
+      <form id="registrar" action="loguear.php" method="POST" class="login100-form validate-form">
+        <div class="flex-c p-b-5">
+          <img src="img/favicon.ico" alt="">
         </div>
-      	<br>
-        <div class="alert alert-danger" align="center">
-        	<?php  
-			require 'conexion.php';
-			session_start();
+        <span class="login100-form-title p-b-37">
+          Iniciar Sesión
+        </span>
 
-			$usuariol = $_POST['usuario'];
-			$clavel = $_POST['contrasena'];
+        <div class="wrap-input100 validate-input m-b-20" data-validate="Ingrese correo electrónico">
+          <input class="input100" type="text" name="usuario" placeholder="Nombre de usuario">
+          <span class="focus-input100"></span>
+        </div>
 
-			$q = "SELECT COUNT(*) FROM usuario where email = '$usuariol' and password = '$clavel' and estado = 1";
-			$consulta = mysqli_query($conexion,$q);
-			$array = mysqli_fetch_array($consulta);
+        <div class="wrap-input100 validate-input m-b-25" data-validate = "Ingrese Contraseña">
+          <input class="input100" type="password" name="contrasena" placeholder="Contraseña">
+          <span class="focus-input100"></span>
+        </div>
 
-			if($array['contar'>0]){
-				$_SESSION['username'] = $usuariol;
-				header("location: index.php");
-			}else{
-				echo "DATOS INCORRECTOS";
-			}
-
-			?>
-			</div>
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn">
+            Iniciar Sesión
+          </button>
+        </div>
       </form>
-      <br>
        <div class="text-center">
-          <a href="login.php" class="txt2 hov1">
-            Volver
+          <a href="recuperarpassword.php" class="txt2 hov1">
+            ¿OLvidaste tu Contraseña?
           </a>
         </div>
       

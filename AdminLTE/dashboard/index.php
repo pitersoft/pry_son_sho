@@ -2,7 +2,6 @@
 
 session_start();
 $usuario = $_SESSION['username'];
-
 if(!isset($usuario)){
   header("location: index.php");
 }
@@ -25,6 +24,7 @@ if(!isset($usuario)){
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed" data-panel-auto-height-mode="height">
 <div class="wrapper">
@@ -166,6 +166,56 @@ if(!isset($usuario)){
           <i class="fas fa-th-large"></i>
         </a>
       </li>
+      <?php
+          $con=mysqli_connect("localhost","root","","basesistema");
+          $sell= "SELECT * FROM usuario WHERE email='$usuario'";
+          $query=mysqli_query($con,$sell);
+          while($datos = mysqli_fetch_array($query))
+          {
+      ?>
+      <li class="nav-item">
+        <a class="btn"  data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+          <img style="width: 40px;height: 40px;border-radius: 20px;" src="data:image/png;base64,<?php echo base64_encode($datos['perfil']); ?>" alt="">
+        </a>
+      </li>
+      <div class="collapse" id="collapseExample" style="position: absolute;left: 70%;top: 75px;width: 300px;">
+        <div class="card card-body">
+          <form action="" method="POST" enctype="multipart/form-data">
+            <img style="width: 200px;height: 200px;border-radius: 100%;margin: 10px 35px;border: 2px solid #000;" src="data:image/png;base64,<?php echo base64_encode($datos['perfil']); ?>" alt="">
+            <div class="mb-3">
+              <label class="form-label" for="nombre">Nombre</label>
+              <input class="form-control" id="nombre" value="<?php echo $datos['nombre']; ?>" name="nombreimg" type="text" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="imagen">Foto de Perfil</label>
+              <input class="form-control" required="" id="imagen" name="imagenimg" type="file" />
+            </div>
+            <div>
+              <span><input id="enviar" class="btn btn-primary"  name="guardarperfil" type="submit" value="Enviar" /></span>
+            </div>
+            <?php
+            if(isset($_POST['guardarperfil'])){
+              $nombreimg=$_POST['nombreimg'];
+              $imagenimg=addslashes(file_get_contents($_FILES['imagenimg']['tmp_name']));
+              $queryimg="UPDATE usuario SET nombre='$nombreimg', perfil='$imagenimg' WHERE email='$usuario'";
+              $resultadoimg=$con->query($queryimg);
+              if ($resultadoimg) {
+                echo '<br><div class="alert alert-success">Se guardo imagen.</div>';
+                $url='index.php';
+                echo '<meta http-equiv=refresh content="0.5; '.$url.'">';
+                die;
+                // header("location: index.php");
+              } else {
+                echo '<br><div class="alert alert-warning">No se guardo imagen.</div>';
+              }
+            }
+            ?>
+          </form>
+        </div>
+      </div>
+      <?php
+          }
+      ?> 
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -799,11 +849,8 @@ if(!isset($usuario)){
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; <?php echo date('Y'); ?> <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.1.0
-    </div>
   </footer>
 
   <!-- Control Sidebar -->
@@ -813,7 +860,7 @@ if(!isset($usuario)){
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

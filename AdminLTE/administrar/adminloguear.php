@@ -7,9 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="shortcut icon" href="images/icons/favicon.ico" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--===============================================================================================-->  
    <!--  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
   <!--===============================================================================================-->
@@ -35,7 +35,7 @@
     <title>Datos Incorrectos</title>
   </head>
   <body>
-    <div class="container-login100" style="background-image: url('images/bg-01.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div class="container-login100" style="background-image: url('img/fondo.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
       <form class="login100-form validate-form">
       	<div class="flex-c p-b-5">
@@ -47,15 +47,15 @@
 			require '../conexion.php';
 			session_start();
 
-			$usuarioad = $_POST['usuario'];
-			$clavead = $_POST['contrasena'];
+			$usuarioad = $_POST['usuarioad'];
+			$clavead = $_POST['contrasenaad'];
 
 			$q = "SELECT COUNT(*) FROM usuario where email = '$usuarioad' and password = '$clavead' and login = 1";
 			$consulta = mysqli_query($conexion,$q);
 			$array = mysqli_fetch_array($consulta);
 
 			if($array['contar'>0]){
-				$_SESSION['username'] = $usuario;
+				$_SESSION['username'] = $usuarioad;
 				header("location: ../dashboard");
 			}else{
 				echo "Usted no es Administrador";
@@ -66,7 +66,7 @@
       </form>
       <br>
        <div class="text-center">
-          <a href="../index.php" class="txt2 hov1">
+          <a href="../login.php" class="txt2 hov1">
             Volver
           </a>
         </div>
@@ -94,7 +94,6 @@
   <script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
   <script src="js/main.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
