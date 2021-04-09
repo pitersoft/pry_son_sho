@@ -38,23 +38,23 @@
       }
         
     ?>
-    <div class="container-login100" style="background-image: url('img/fondo.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;width: 500px;margin-left: 30%; margin-top: 150px;">
+    <div class="container-login100" style="background-image: url('img/fondo.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;width: 80%;margin-left: 10%; margin-top: 150px;">
     <div class="wrap-login100 p-l-20 p-r-30 p-t-10 p-b-30">
        <?php
       include 'conexion.php';
       $id=$_GET['id'];
-      $sql="SELECT * FROM usuario WHERE idusuario='".$id."'";
+      $sql="SELECT * FROM visitas INNER JOIN personas ON visitas.idpersona = personas.idpersona WHERE codigo_visita='".$id."'";
       $resultado=mysqli_query($con,$sql);
         while ($fila=mysqli_fetch_assoc($resultado)) {
       ?>
       <form action="" method="POST">
-        <p class="h4">Eliminar a usuario N° <?php echo $fila['idusuario']; ?> de nombre <?php echo $fila['nombre']; ?>.</p>
+        <p class="h4">Eliminar a usuario N° <?php echo $fila['codigo_visita']; ?> de nombre <?php echo $fila['nombres'];echo " ";echo $fila['apellido_pat'];echo " ";echo $fila['apellido_mat']; ?>.</p>
         <a href="index.php" class="btn btn-secondary">Cancelar</a>
         <input type="submit" class="btn btn-danger" name="eliminar" value="Eliminar">
         <?php
           $idmu=$_GET['id'];
             if (isset($_POST['eliminar'])) {
-              $eliminar="DELETE FROM usuario WHERE idusuario='$idmu'";
+              $eliminar="DELETE FROM visitas WHERE codigo_visita='$idmu'";
               $resultadoeliminar=mysqli_query($con,$eliminar);
               $respuestaeliminar="Se ha eliminado usuario.";
               echo $respuestaeliminar;
