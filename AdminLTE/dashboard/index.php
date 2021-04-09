@@ -175,13 +175,13 @@ if(!isset($usuario)){
       ?>
       <li class="nav-item">
         <a class="btn"  data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          <img style="width: 40px;height: 40px;border-radius: 20px;" src="data:image/png;base64,<?php echo base64_encode($datos['perfil']); ?>" alt="">
+          <img style="width: 40px;height: 40px;border-radius: 20px;" src="imgperfil/<?php echo ($datos['perfil']); ?>" alt="">
         </a>
       </li>
       <div class="collapse" id="collapseExample" style="position: absolute;left: 70%;top: 75px;width: 300px;">
         <div class="card card-body">
           <form action="" method="POST" enctype="multipart/form-data">
-            <img style="width: 200px;height: 200px;border-radius: 100%;margin: 10px 35px;border: 2px solid #000;" src="data:image/png;base64,<?php echo base64_encode($datos['perfil']); ?>" alt="">
+            <img style="width: 200px;height: 200px;border-radius: 100%;margin: 10px 35px;border: 2px solid #000;" src="imgperfil/<?php echo ($datos['perfil']); ?>" alt="">
             <div class="mb-3">
               <label class="form-label" for="nombre">Nombre</label>
               <input class="form-control" id="nombre" value="<?php echo $datos['nombre']; ?>" name="nombreimg" type="text" />
@@ -196,8 +196,13 @@ if(!isset($usuario)){
             <?php
             if(isset($_POST['guardarperfil'])){
               $nombreimg=$_POST['nombreimg'];
-              $imagenimg=addslashes(file_get_contents($_FILES['imagenimg']['tmp_name']));
-              $queryimg="UPDATE usuario SET nombre='$nombreimg', perfil='$imagenimg' WHERE email='$usuario'";
+              if(isset($_FILES['imagenimg'])){
+                $tmp_name = $_FILES['imagenimg']['tmp_name'];
+                $directorio = "imgperfil/";
+                $nombre = basename($_FILES['imagenimg']['name']);
+                $subido = move_uploaded_file($tmp_name, $directorio.$nombre);
+              }
+              $queryimg="UPDATE usuario SET nombre='$nombreimg', perfil='$nombre' WHERE email='$usuario'";
               $resultadoimg=$con->query($queryimg);
               if ($resultadoimg) {
                 echo '<br><div class="alert alert-success">Se guardo imagen.</div>';
