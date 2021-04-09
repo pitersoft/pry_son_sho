@@ -37,7 +37,7 @@
 				</div>
 
 				<!-- Modal -->
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog modal-xl">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -45,14 +45,6 @@
 				        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				      </div>
 				      <div class="modal-body">
-				      	<?php
-							
-							if(isset($_POST['exportf'])){
-								$fhing = $_POST['filtroing']." 00:00:00";
-								$fhsal = $_POST['filtrosal']." 23:59:59";
-								echo "Inicio: ".$fhing." - Fin : ".$fhsal."<br><br><br>";
-							}  
-						?>
 				       <iframe style="width: 100%;height: 1000px;border-style: none;" src="visitas/reporte.php"></iframe>
 				      </div>
 				      <div class="modal-footer">
@@ -62,7 +54,7 @@
 				    </div>
 				  </div>
 				</div>
-			</div>
+			</div> -->
 
 			      <!-- Nuevo Usuaario -->
 			      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -115,7 +107,7 @@
 				            <th scope="col">NOMBRES Y APELLIDOS</th>
 				            <th scope="col">FECHA DE INGRESO</th>
 				            <th scope="col">FECHA DE SALIDA</th>				            
-				            <th scope="col">MANTENIMIENTOS</th>
+				            <!-- <th scope="col">MANTENIMIENTOS</th> -->
 						</tr>
 					</thead>
 					<tbody>
@@ -130,14 +122,14 @@
 				            <td><?php echo $row['nombres']." ".$row['apellido_pat']." ".$row['apellido_mat']; ?></td>
 				            <td><?php echo $row['fh_ingreso']; ?></td>
 				            <td><?php echo $row['fh_salida']; ?></td>
-				            <td>
+				            <!-- <td>
 				              <a href="modificarusuario.php?id=<?php echo $row['codigo_visita']; ?>" class="btn btn-warning">
 				                Editar
 				              </a>
 				              <a href="eliminarusuario.php?id=<?php echo $row['codigo_visita']; ?>" class="btn btn-danger">
 				                Eliminar
 				              </a>
-				            </td>  
+				            </td>   -->
 						</tr>
 						<?php
 							}  

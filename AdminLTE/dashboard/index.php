@@ -465,7 +465,7 @@ if(!isset($usuario)){
               </li>
             </ul>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>
@@ -505,7 +505,7 @@ if(!isset($usuario)){
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
           <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="pages/calendar.html" class="nav-link">
